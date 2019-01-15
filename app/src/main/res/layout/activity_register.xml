@@ -1,0 +1,107 @@
+<LinearLayout android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Admission Number"/>
+
+    <EditText
+        android:id="@+id/admno"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mobile Number"/>
+
+    <EditText
+        android:id="@+id/mob"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Id"/>
+
+    <EditText
+        android:id="@+id/email"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username"/>
+
+    <EditText
+        android:id="@+id/usr"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"/>
+
+    <EditText
+        android:id="@+id/pass"
+
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm Password"/>
+
+    <EditText
+        android:id="@+id/cnfpass"
+
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/regButton"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTER"
+        />
+
+    <Button
+        android:id="@+id/alreadyRegButton"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already Registered"
+        />
+
+</LinearLayout>
