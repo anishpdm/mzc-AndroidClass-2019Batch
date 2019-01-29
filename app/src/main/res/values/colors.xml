@@ -3,4 +3,18 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="loginButton">#E28A1F</color>
+
+    <color name="startcolor">#3CA55C </color>
+    <color name="endcolor"> #B5AC49 </color>
+<color name="roundcolour">#F9D423</color>
+
+    <color name="Backgroundstartcolor">#314755 </color>
+    <color name="BackgroundEndcolor"> #26a0da </color>
+
+
+
+
+
 </resources>

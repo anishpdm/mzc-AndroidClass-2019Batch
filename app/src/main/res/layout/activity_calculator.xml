@@ -1,0 +1,40 @@
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Number 1"/>
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/num1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Number 2"/>
+
+    <EditText
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/num2"/>
+
+
+
+    <Button
+        android:id="@+id/but"
+android:text="ADD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:visibility="gone"
+        android:editable="false"
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

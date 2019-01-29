@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Mzc AndroidApp</string>
+
+    <string name="mydegree">Highest Degree</string>
+
+    <string-array name="degreeList">
+
+        <item>Bsc Computer Science</item>
+        <item>BCA Computer Science</item>
+        <item>Msc Computer Science</item>
+        <item>MCA Computer Science</item>
+
+    </string-array>
+
 </resources>

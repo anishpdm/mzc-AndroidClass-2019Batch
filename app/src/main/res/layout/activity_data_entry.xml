@@ -1,0 +1,28 @@
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:hint="Enter Your Name"
+        android:layout_margin="25dp"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="Enter Your Email Id"
+        android:layout_margin="20dp"
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="SUBMIT"
+        android:layout_margin="20dp"
+        android:id="@+id/but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
