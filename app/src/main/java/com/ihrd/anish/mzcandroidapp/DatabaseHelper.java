@@ -2,6 +2,7 @@ package com.ihrd.anish.mzcandroidapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -53,10 +54,62 @@ if(status==-1)
 else {
     return true;
 }
+    }
+
+
+    // Retrieval of Data
+
+   public Cursor SearchData(String name)
+   {
+       SQLiteDatabase db=this.getWritableDatabase();
+
+      Cursor cur= db.rawQuery("SELECT * FROM "+TableName+" WHERE "+col2+"='"+name+"'",null);
+
+      return cur;
+
+
+   }
+
+
+
+   // Update
+
+    public boolean Update(String name,String id)
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(col3,name);
+
+        long status =  db.update(TableName, contentValues, col1 +"="+ id, null);
+        if(status==-1)
+        {
+            return false;
+        }
+        else {
+            return true;
+        }
 
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

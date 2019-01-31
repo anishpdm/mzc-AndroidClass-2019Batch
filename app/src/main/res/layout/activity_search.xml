@@ -7,29 +7,30 @@
     <EditText
         android:hint="Enter Your Name"
         android:layout_margin="25dp"
-        android:id="@+id/name"
+        android:id="@+id/readname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
+
+    <Button
+        android:text="SEARCH"
+        android:layout_margin="20dp"
+        android:id="@+id/searchbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
     <EditText
-        android:hint="Enter Your Email Id"
-        android:layout_margin="20dp"
-        android:id="@+id/email"
+        android:id="@+id/res"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 
     <Button
-        android:text="SUBMIT"
-        android:layout_margin="20dp"
-        android:id="@+id/but"
+        android:text="Update"
+
+        android:id="@+id/UpdateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <Button
-            android:text="Search "
-        android:layout_margin="20dp"
-        android:id="@+id/Searchbut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
 </LinearLayout>

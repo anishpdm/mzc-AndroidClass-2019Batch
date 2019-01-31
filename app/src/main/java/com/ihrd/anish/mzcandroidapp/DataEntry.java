@@ -1,5 +1,6 @@
 package com.ihrd.anish.mzcandroidapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 public class DataEntry extends AppCompatActivity {
 
 
-    Button b;
+    Button b,b1;
     EditText ed1,ed2;
     String s1,s2;
     DatabaseHelper databaseHelper;
@@ -21,12 +22,21 @@ public class DataEntry extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_entry);
         b=(Button)findViewById(R.id.but);
+        b1=(Button)findViewById(R.id.Searchbut);
+
+
         ed1=(EditText)findViewById(R.id.name);
         ed2=(EditText)findViewById(R.id.email);
         databaseHelper=new DatabaseHelper(this);
         databaseHelper.getWritableDatabase();
 
-
+b1.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent i=new Intent(getApplicationContext(),SearchActivity.class);
+        startActivity(i);
+    }
+});
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +55,6 @@ public class DataEntry extends AppCompatActivity {
                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
 
            }
-
-
 
             }
         });

@@ -23,13 +23,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/num2"/>
 
-
-
     <Button
         android:id="@+id/but"
 android:text="ADD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:visibility="gone"
         android:editable="false"
