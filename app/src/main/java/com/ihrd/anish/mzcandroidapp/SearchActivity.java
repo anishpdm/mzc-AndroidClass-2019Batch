@@ -12,9 +12,9 @@ import android.widget.Toast;
 public class SearchActivity extends AppCompatActivity {
 
 
-    Button b,u;
+    Button b,u,del;
     EditText ed,ed1;
-    String getName,getEmail,getId;
+    String getName,getEmail,getId,newEmail;
     DatabaseHelper databaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,32 @@ public class SearchActivity extends AppCompatActivity {
 
         u=(Button)findViewById(R.id.UpdateButton);
 
+        del=(Button)findViewById(R.id.DeleteButton);
+
         b=(Button)findViewById(R.id.searchbutton);
         ed=(EditText)findViewById(R.id.readname);
 
         ed1=(EditText)findViewById(R.id.res);
+
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                boolean status= databaseHelper.DeleteData(getId);
+
+                if(status==true)
+                {
+                    Toast.makeText(getApplicationContext(),"Deleted Succesfully ",Toast.LENGTH_LONG).show();
+
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"Error in Deletion",Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+        });
 
 
 
@@ -37,16 +59,21 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String newVal=ed1.getText().toString();
-             boolean status=   databaseHelper.Update(newVal,getId);
+                 newEmail=ed1.getText().toString();
+
+                boolean status= databaseHelper.UpdateData(getId,newEmail);
+
                 if(status==true)
                 {
-                    Toast.makeText(getApplicationContext(),"Succesfully Updated",Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"UPDATED Succesfully ",Toast.LENGTH_LONG).show();
 
                 }
+                else {
+                    Toast.makeText(getApplicationContext(),"Error in UPDATION",Toast.LENGTH_LONG).show();
+
+                }
+
+
             }
         });
 

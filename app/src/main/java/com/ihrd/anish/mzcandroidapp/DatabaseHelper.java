@@ -74,14 +74,34 @@ else {
 
    // Update
 
-    public boolean Update(String name,String id)
+public boolean UpdateData(String id,String email)
+{
+    SQLiteDatabase db=this.getWritableDatabase();
+
+    ContentValues contentValues=new ContentValues();
+    contentValues.put(col3,email);
+
+    long status=db.update(TableName,contentValues,col1 + "=" +id,null);
+    if(status==-1)
+    {
+        return false;
+    }
+    else {
+        return true;
+    }
+
+}
+
+
+// Delete
+
+    public boolean DeleteData(String id)
     {
         SQLiteDatabase db=this.getWritableDatabase();
 
-        ContentValues contentValues=new ContentValues();
-        contentValues.put(col3,name);
 
-        long status =  db.update(TableName, contentValues, col1 +"="+ id, null);
+
+        long status=db.delete(TableName,col1 + "=" +id,null);
         if(status==-1)
         {
             return false;
@@ -90,10 +110,7 @@ else {
             return true;
         }
 
-
-
     }
-
 
 
 
