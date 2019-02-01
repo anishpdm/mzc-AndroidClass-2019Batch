@@ -95,22 +95,7 @@ public boolean UpdateData(String id,String email)
 
 // Delete
 
-    public boolean DeleteData(String id)
-    {
-        SQLiteDatabase db=this.getWritableDatabase();
 
-
-
-        long status=db.delete(TableName,col1 + "=" +id,null);
-        if(status==-1)
-        {
-            return false;
-        }
-        else {
-            return true;
-        }
-
-    }
 
 
 

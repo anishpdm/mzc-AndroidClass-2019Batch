@@ -1,6 +1,8 @@
 package com.ihrd.anish.mzcandroidapp;
 
+import android.content.DialogInterface;
 import android.database.Cursor;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,8 @@ public class SearchActivity extends AppCompatActivity {
     EditText ed,ed1;
     String getName,getEmail,getId,newEmail;
     DatabaseHelper databaseHelper;
+
+    AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,22 +37,41 @@ public class SearchActivity extends AppCompatActivity {
 
         ed1=(EditText)findViewById(R.id.res);
 
+
+         builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Confirm");
+        builder.setMessage("Are you sure?");
+
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                // Do nothing but close the dialog
+
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // Do nothing
+                dialog.dismiss();
+            }
+        });
+
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                boolean status= databaseHelper.DeleteData(getId);
+                AlertDialog alert = builder.create();
+                alert.show();
 
-                if(status==true)
-                {
-                    Toast.makeText(getApplicationContext(),"Deleted Succesfully ",Toast.LENGTH_LONG).show();
 
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"Error in Deletion",Toast.LENGTH_LONG).show();
 
-                }
 
             }
         });
