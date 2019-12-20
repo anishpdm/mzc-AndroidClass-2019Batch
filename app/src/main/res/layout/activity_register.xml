@@ -25,45 +25,6 @@
             android:textSize="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Admission Number"/>
-
-        <EditText
-            android:id="@+id/admno"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:textSize="18dp"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/mydegree"
-            />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/degreeList"
-            />
-
-
-        <TextView
-            android:textSize="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mobile Number"/>
-
-        <EditText
-            android:id="@+id/mob"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:textSize="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Email Id"/>
 
         <EditText
@@ -71,6 +32,9 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+
+
 
 
         <TextView
@@ -97,18 +61,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <TextView
-            android:textSize="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Confirm Password"/>
-
-        <EditText
-            android:id="@+id/cnfpass"
-
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/regButton"

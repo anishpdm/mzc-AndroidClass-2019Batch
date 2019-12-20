@@ -2,6 +2,7 @@ package com.ihrd.anish.mzcandroidapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,11 +17,14 @@ TextView tv1;
 Button b,b1,b2,b3,b4;
 String getUsername,getPassword,checkUsername,testString;
 
-
+DatabaseHelper databaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        databaseHelper=new DatabaseHelper(this);
+        databaseHelper.getWritableDatabase();
 
         SharedPreferences pref=getSharedPreferences("login",MODE_PRIVATE);
 
@@ -91,25 +95,76 @@ String getUsername,getPassword,checkUsername,testString;
              getUsername=ed1.getText().toString();
              getPassword=ed2.getText().toString();
 
-if(getUsername.equals("mzc")&&getPassword.equals("college"))
-{
+             Cursor cur=databaseHelper.LogInCheck(getUsername);
 
-    SharedPreferences.Editor editor=getSharedPreferences("login",MODE_PRIVATE).edit();
-    editor.putString("username",getUsername);
-    editor.putString("password",getPassword);
-    editor.apply(); // editor.commit();
+             if(cur.getCount()==0)
+             {
+                 Toast.makeText(getApplicationContext(),"Invalid Username",Toast.LENGTH_LONG).show();
+
+             }
+             else
+             {
+                 while(cur.moveToNext())
+                 {
+
+                     String dbPass= cur.getString(4);
+                     String dbname=cur.getString(1);
+
+                     if(dbPass.equals(getPassword))
+                     {
+
+                         SharedPreferences.Editor editor=getSharedPreferences("MyData",MODE_PRIVATE).edit();
+                         editor.putString("name",dbname);
+
+                         editor.apply();
 
 
 
-    Intent i=new Intent(getApplicationContext(),WelcomeActivity.class);
-
-    i.putExtra("username",getUsername);
-    i.putExtra("password",getPassword);
+                        Intent intent=new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
 
 
 
-    startActivity(i);
-}
+                     }
+                     else
+                     {
+                         Toast.makeText(getApplicationContext()," WrongPassword",Toast.LENGTH_LONG).show();
+
+                     }
+
+
+                 }
+
+
+
+
+
+             }
+
+
+
+
+
+
+//if(getUsername.equals("mzc")&&getPassword.equals("college"))
+//{
+//
+//    SharedPreferences.Editor editor=getSharedPreferences("login",MODE_PRIVATE).edit();
+//    editor.putString("username",getUsername);
+//    editor.putString("password",getPassword);
+//    editor.apply(); // editor.commit();
+//
+//
+//
+//    Intent i=new Intent(getApplicationContext(),WelcomeActivity.class);
+//
+//    i.putExtra("username",getUsername);
+//    i.putExtra("password",getPassword);
+//
+//
+//
+//    startActivity(i);
+//}
 //             Toast.makeText(getApplicationContext(),"Hello",Toast.LENGTH_LONG).show();
          }
      });

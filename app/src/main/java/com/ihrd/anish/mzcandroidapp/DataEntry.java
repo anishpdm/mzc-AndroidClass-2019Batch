@@ -18,6 +18,13 @@ public class DataEntry extends AppCompatActivity {
     DatabaseHelper databaseHelper;
 
     @Override
+    public void onBackPressed() {
+
+        Toast.makeText(getApplicationContext(), "Back press disabled!", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_entry);

@@ -20,10 +20,48 @@ public class SearchActivity extends AppCompatActivity {
     DatabaseHelper databaseHelper;
 
     AlertDialog.Builder builder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        builder=new AlertDialog.Builder(this);
+        builder.setTitle("Confirm");
+        builder.setMessage("Are You sure want to Delete ?");
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+         boolean status= databaseHelper.DeleteData(getId);
+         if(status==true)
+         {
+             Toast.makeText(getApplicationContext(),"Deleted Succesfully ",Toast.LENGTH_LONG).show();
+
+         }
+         else
+         {
+             Toast.makeText(getApplicationContext(),"Error in Deletion",Toast.LENGTH_LONG).show();
+
+         }
+                dialog.dismiss();
+
+
+
+            }
+        });
+
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+
+            }
+        });
+
 
         databaseHelper=new DatabaseHelper(this);
         databaseHelper.getWritableDatabase();
@@ -38,37 +76,19 @@ public class SearchActivity extends AppCompatActivity {
         ed1=(EditText)findViewById(R.id.res);
 
 
-         builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("Confirm");
-        builder.setMessage("Are you sure?");
-
-        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-
-            public void onClick(DialogInterface dialog, int which) {
-                // Do nothing but close the dialog
-
-                dialog.dismiss();
-            }
-        });
-
-        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                // Do nothing
-                dialog.dismiss();
-            }
-        });
 
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
                 AlertDialog alert = builder.create();
                 alert.show();
+
+
+
+
+
 
 
 
